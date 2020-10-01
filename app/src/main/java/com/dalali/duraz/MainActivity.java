@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         navigate();
 
     }
+    //this is for navigation
     public void navigate(){
         button.setOnClickListener(new View.OnClickListener() {
             @Override
