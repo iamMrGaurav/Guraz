@@ -26,13 +26,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void navigate(){
-        final String currentEmail  = email.getText().toString();
-        final String currentPassword = password.getText().toString();
-
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (currentEmail.equals("Admin") && currentPassword.equals("Admin")){
+                if (userValidate){
                     Intent intent = new Intent(getApplicationContext(),HomePage.class);
                     startActivity(intent);
                 }else{
@@ -41,6 +38,17 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+    public boolean userValidate(){
+        final String currentEmail  = email.getText().toString();
+        final String currentPassword = password.getText().toString();
+        boolean res = false;
+        if (currentEmail.equals("Admin") && currentPassword.equals("Admin")){
+                    res = true;
+                }else{
+                    res = false;
+                }
+        return res;
     }
 
 }
